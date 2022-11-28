@@ -1,6 +1,6 @@
 package com.example.PeregrinosFX.config;
 
-import com.codetreatise.view.FxmlView;
+import com.example.PeregrinosFX.view.FxmlView;
 import javafx.application.Platform;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
