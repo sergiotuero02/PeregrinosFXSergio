@@ -8,50 +8,50 @@
    <children>
       <Pane layoutX="48.0" layoutY="53.0" prefHeight="411.0" prefWidth="602.0" styleClass="pane" stylesheets="@../styles/Registro.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Label layoutX="28.0" layoutY="57.0" prefHeight="30.0" prefWidth="84.0" text="Nombre:" textFill="#45322e">
+            <Label fx:id="nombreLBL" layoutX="28.0" layoutY="57.0" prefHeight="30.0" prefWidth="84.0" text="Nombre:" textFill="#45322e">
                <font>
                   <Font name="System Bold Italic" size="20.0" />
                </font>
             </Label>
-            <TextField layoutX="28.0" layoutY="93.0" prefHeight="28.0" prefWidth="226.0" style="-fx-background-color: transparent;" />
-            <Label layoutX="28.0" layoutY="145.0" text="Usuario:" textFill="#45322e">
+            <TextField fx:id="nombreTF" layoutX="28.0" layoutY="93.0" prefHeight="28.0" prefWidth="226.0" style="-fx-background-color: transparent;" />
+            <Label fx:id="usuarioLBL" layoutX="28.0" layoutY="145.0" text="Usuario:" textFill="#45322e">
                <font>
                   <Font name="System Bold Italic" size="20.0" />
                </font>
             </Label>
-            <TextField layoutX="339.0" layoutY="94.0" prefHeight="25.0" prefWidth="226.0" style="-fx-background-color: transparent;" styleClass="textfield2" stylesheets="@../styles/Registro.css" />
-            <Label layoutX="28.0" layoutY="223.0" text="Nacionalidad:" textFill="#45322e">
+            <TextField fx:id="contrasenaTF" layoutX="339.0" layoutY="94.0" prefHeight="25.0" prefWidth="226.0" style="-fx-background-color: transparent;" styleClass="textfield2" stylesheets="@../styles/Registro.css" />
+            <Label fx:id="nacionalidadLBL" layoutX="28.0" layoutY="223.0" text="Nacionalidad:" textFill="#45322e">
                <font>
                   <Font name="System Bold Italic" size="20.0" />
                </font>
             </Label>
-            <ComboBox layoutX="28.0" layoutY="261.0" prefHeight="25.0" prefWidth="226.0" style="-fx-background-color: D5B794;" />
-            <Button layoutX="28.0" layoutY="322.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="226.0" style="-fx-background-color: #009000;" text="Aceptar" textFill="#fafafa">
+            <ComboBox fx:id="nacionalidadCB" layoutX="28.0" layoutY="261.0" prefHeight="25.0" prefWidth="226.0" style="-fx-background-color: D5B794;" />
+            <Button fx:id="aceptarBTN" layoutX="28.0" layoutY="322.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="226.0" style="-fx-background-color: #009000;" text="Aceptar" textFill="#fafafa">
                <font>
                   <Font name="System Bold Italic" size="17.0" />
                </font></Button>
-            <Button layoutX="338.0" layoutY="322.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="226.0" style="-fx-background-color: #B22222;" text="Cancelar" textFill="WHITE">
+            <Button fx:id="cancelarBTN" layoutX="338.0" layoutY="322.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="226.0" style="-fx-background-color: #B22222;" text="Cancelar" textFill="WHITE">
                <font>
                   <Font name="System Bold Italic" size="17.0" />
                </font></Button>
-            <Label layoutX="339.0" layoutY="57.0" text="Contraseña:" textFill="#45322e">
+            <Label fx:id="contrasenaLBL" layoutX="339.0" layoutY="57.0" text="Contraseña:" textFill="#45322e">
                <font>
                   <Font name="System Bold Italic" size="20.0" />
                </font>
             </Label>
-            <Label layoutX="335.0" layoutY="145.0" text="Confirmar contraseña:" textFill="#45322e">
+            <Label fx:id="confirmcontraLBL" layoutX="335.0" layoutY="145.0" text="Confirmar contraseña:" textFill="#45322e">
                <font>
                   <Font name="System Bold Italic" size="20.0" />
                </font>
             </Label>
-            <Label layoutX="335.0" layoutY="224.0" text="Parada:" textFill="#45322e">
+            <Label fx:id="paradaLBL" layoutX="335.0" layoutY="224.0" text="Parada:" textFill="#45322e">
                <font>
                   <Font name="System Bold Italic" size="19.0" />
                </font>
             </Label>
-            <TextField layoutX="28.0" layoutY="181.0" prefHeight="25.0" prefWidth="226.0" style="-fx-background-color: transparent;" />
-            <TextField layoutX="339.0" layoutY="181.0" prefHeight="25.0" prefWidth="226.0" style="-fx-background-color: transparent;" styleClass="textField" />
-            <ComboBox layoutX="338.0" layoutY="261.0" prefHeight="25.0" prefWidth="226.0" style="-fx-background-color: D5B794;" />
+            <TextField fx:id="usuarioTF" layoutX="28.0" layoutY="181.0" prefHeight="25.0" prefWidth="226.0" style="-fx-background-color: transparent;" />
+            <TextField fx:id="confirmcontraTF" layoutX="339.0" layoutY="181.0" prefHeight="25.0" prefWidth="226.0" style="-fx-background-color: transparent;" styleClass="textField" />
+            <ComboBox fx:id="paradaCB" layoutX="338.0" layoutY="261.0" prefHeight="25.0" prefWidth="226.0" style="-fx-background-color: D5B794;" />
          </children></Pane>
    </children>
 </AnchorPane>

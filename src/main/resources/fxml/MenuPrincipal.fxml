@@ -8,11 +8,11 @@
    <children>
       <Pane layoutY="-1.0" prefHeight="411.0" prefWidth="602.0" styleClass="pane" stylesheets="@../styles/MenuPrincipal.css">
          <children>
-            <Button layoutX="125.0" layoutY="232.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="136.0" style="-fx-background-color: #eed4b5;" text="Iniciar sesión" textFill="#45322e">
+            <Button fx:id="iniciarsesionBTN" layoutX="125.0" layoutY="232.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="136.0" style="-fx-background-color: #eed4b5;" text="Iniciar sesión" textFill="#45322e">
                <font>
                   <Font name="System Bold Italic" size="16.0" />
                </font></Button>
-            <Button layoutX="341.0" layoutY="232.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="136.0" style="-fx-background-color: #45322e;" text="Registrarse" textFill="#eed4b5">
+            <Button fx:id="registrarseBTN" layoutX="341.0" layoutY="232.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="136.0" style="-fx-background-color: #45322e;" text="Registrarse" textFill="#eed4b5">
                <font>
                   <Font name="System Bold Italic" size="16.0" />
                </font></Button>
