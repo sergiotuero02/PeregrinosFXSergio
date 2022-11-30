@@ -1,14 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.PeregrinosFX.controller.MenuPrincipalController"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.PeregrinosFX.controller.MenuPrincipalController">
+   <children>
+      <Pane layoutY="-1.0" prefHeight="411.0" prefWidth="602.0" styleClass="pane" stylesheets="@../styles/MenuPrincipal.css">
+         <children>
+            <Button layoutX="125.0" layoutY="232.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="136.0" style="-fx-background-color: #eed4b5;" text="Iniciar sesión" textFill="#45322e">
+               <font>
+                  <Font name="System Bold Italic" size="16.0" />
+               </font></Button>
+            <Button layoutX="341.0" layoutY="232.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="136.0" style="-fx-background-color: #45322e;" text="Registrarse" textFill="#eed4b5">
+               <font>
+                  <Font name="System Bold Italic" size="16.0" />
+               </font></Button>
+         </children></Pane>
+   </children>
 </AnchorPane>
