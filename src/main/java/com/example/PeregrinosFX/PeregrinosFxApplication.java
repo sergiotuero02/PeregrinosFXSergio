@@ -19,6 +19,7 @@ import static javafx.application.Application.launch;
 
 @SpringBootApplication
 public class PeregrinosFxApplication extends Application{
+
     protected ConfigurableApplicationContext springContext;
     protected StageManager stageManager;
 

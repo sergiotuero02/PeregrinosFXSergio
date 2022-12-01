@@ -8,7 +8,9 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import org.springframework.stereotype.Controller;
 
+@Controller
 public class RegistroController implements Initializable {
 
     @FXML
