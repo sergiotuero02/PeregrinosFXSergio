@@ -35,6 +35,7 @@ public class PeregrinosFxApplication extends Application{
     @Override
     public void start(Stage stage) throws Exception {
         stageManager = springContext.getBean(StageManager.class, stage);
+        stage.setResizable(false);
         displayInitialScene();
     }
 
