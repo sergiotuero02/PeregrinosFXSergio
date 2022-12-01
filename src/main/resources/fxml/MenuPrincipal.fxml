@@ -12,7 +12,7 @@
                <font>
                   <Font name="System Bold Italic" size="16.0" />
                </font></Button>
-            <Button fx:id="registrarseBTN" layoutX="341.0" layoutY="232.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="136.0" style="-fx-background-color: #45322e;" text="Registrarse" textFill="#eed4b5">
+            <Button fx:id="registrarseBTN" onAction="#abrirRegistro" layoutX="341.0" layoutY="232.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="136.0" style="-fx-background-color: #45322e;" text="Registrarse" textFill="#eed4b5">
                <font>
                   <Font name="System Bold Italic" size="16.0" />
                </font></Button>
