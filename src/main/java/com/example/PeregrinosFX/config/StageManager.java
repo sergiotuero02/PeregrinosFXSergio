@@ -6,6 +6,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import org.slf4j.Logger;
+import org.springframework.stereotype.Component;
 
 import java.util.Objects;
 
@@ -14,6 +15,7 @@ import static org.slf4j.LoggerFactory.getLogger;
 /**
  * Manages switching Scenes on the Primary Stage
  */
+
 public class StageManager {
 
     private static final Logger LOG = getLogger(StageManager.class);
