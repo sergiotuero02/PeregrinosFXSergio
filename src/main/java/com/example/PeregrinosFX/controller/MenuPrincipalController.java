@@ -33,6 +33,11 @@ public class MenuPrincipalController implements Initializable {
         stageManager.switchScene(FxmlView.REGISTRO);
     }
 
+    @FXML
+    private void abrirLogin(ActionEvent event) throws IOException{
+        stageManager.switchScene(FxmlView.LOGIN);
+    }
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 

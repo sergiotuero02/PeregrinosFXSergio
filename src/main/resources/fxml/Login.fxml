@@ -4,29 +4,29 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="769.0" prefWidth="1019.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.PeregrinosFX.controller.LoginController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.PeregrinosFX.controller.LoginController">
    <children>
-      <Pane layoutX="359.0" layoutY="150.0" prefHeight="769.0" prefWidth="1019.0" styleClass="pane" stylesheets="@../../../../../PeregrinosFX-master/PeregrinosFX-master/src/main/resources/style/InicioSesion.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <Pane layoutX="359.0" layoutY="150.0" prefHeight="769.0" prefWidth="1019.0" styleClass="pane" stylesheets="@../styles/InicioSesion.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Label fx:id="useri" layoutX="99.0" layoutY="144.0" prefHeight="84.0" prefWidth="821.0" text="Usuario:" textFill="#45322e">
+            <Label fx:id="userLBL" layoutX="59.0" layoutY="60.0" prefHeight="84.0" prefWidth="821.0" text="Usuario:" textFill="#45322e">
                <font>
-                  <Font name="System Bold Italic" size="50.0" />
+                  <Font name="System Bold Italic" size="25.0" />
                </font>
             </Label>
-            <Label fx:id="contraseniaId" layoutX="99.0" layoutY="339.0" prefHeight="92.0" prefWidth="796.0" text="Contraseña: " textFill="#45322e">
+            <Label fx:id="contrsenaLBL" layoutX="60.0" layoutY="167.0" prefHeight="92.0" prefWidth="796.0" text="Contraseña: " textFill="#45322e">
                <font>
-                  <Font name="System Bold Italic" size="50.0" />
+                  <Font name="System Bold Italic" size="25.0" />
                </font>
             </Label>
-            <TextField fx:id="textusuario" editable="false" layoutX="99.0" layoutY="228.0" prefHeight="60.0" prefWidth="821.0" style="-fx-background-color: transparent;" />
-            <TextField fx:id="textcontrasenia" layoutX="99.0" layoutY="437.0" prefHeight="60.0" prefWidth="821.0" style="-fx-background-color: trasnparent;" />
-            <Button fx:id="Buttonaceptar" layoutX="180.0" layoutY="609.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="262.0" style="-fx-background-color: #009000;" text="Aceptar" textFill="#fafafa">
+            <TextField fx:id="usuarioTF" editable="false" layoutX="99.0" layoutY="228.0" prefHeight="60.0" prefWidth="821.0" style="-fx-background-color: transparent;" />
+            <TextField fx:id="contrasenaTF" layoutX="99.0" layoutY="437.0" prefHeight="60.0" prefWidth="821.0" style="-fx-background-color: trasnparent;" />
+            <Button fx:id="aceptarBTN" layoutX="60.0" layoutY="325.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="136.0" style="-fx-background-color: #009000;" text="Aceptar" textFill="#fafafa">
                <font>
-                  <Font name="System Bold Italic" size="19.0" />
+                  <Font name="System Bold Italic" size="14.0" />
                </font></Button>
-            <Button fx:id="Buttoncancelar" layoutX="617.0" layoutY="609.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="262.0" style="-fx-background-color: #B22222;" text="Cancelar" textFill="#fafafa">
+            <Button fx:id="cancelarBTN" onAction="#volverAlMenu" layoutX="406.0" layoutY="325.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="136.0" style="-fx-background-color: #B22222;" text="Cancelar" textFill="#fafafa">
                <font>
-                  <Font name="System Bold Italic" size="19.0" />
+                  <Font name="System Bold Italic" size="14.0" />
                </font></Button>
          </children></Pane>
    </children>
