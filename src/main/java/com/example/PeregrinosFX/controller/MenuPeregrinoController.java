@@ -25,9 +25,6 @@ public class MenuPeregrinoController implements Initializable {
     private Button exportarcarnetBTN;
 
     @FXML
-    private Button alojarseBTN;
-
-    @FXML
     private Button cerrarsesionBTN;
 
     @FXML

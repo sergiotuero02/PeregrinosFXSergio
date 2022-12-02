@@ -14,6 +14,8 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import static com.example.PeregrinosFX.controller.LoginController.rol;
+
 @Controller
 public class ExportarCarnetController implements Initializable{
 
@@ -34,7 +36,12 @@ public class ExportarCarnetController implements Initializable{
 
     @FXML
     private void cancelarAction(ActionEvent event) throws IOException {
-        //CODIGO CANCELAR -> VUELVE A MENU PEREGRINO O ADMIN GENERAL
+        if(rol == 1) {
+            stageManager.switchScene(FxmlView.MENUPEREGRINO);
+        }
+        if(rol == 3) {
+            stageManager.switchScene(FxmlView.MENUADMINGENERAL);
+        }
     }
     @FXML
     private void abrirRegistro(ActionEvent event) throws IOException {

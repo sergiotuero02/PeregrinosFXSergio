@@ -47,6 +47,7 @@ public class LoginController implements Initializable {
     @FXML
     private Button cancelarBTN;
 
+    public static Long rol;
     public StageManager getStageManager() {
         return stageManager;
     }
@@ -118,10 +119,13 @@ public class LoginController implements Initializable {
             stageManager.switchScene(FxmlView.MENUADMINPARADA);
             Long idPerfil =u.getPerfil().getIdPerfil();
             if (idPerfil == 1) {
+                rol = Long.valueOf(1);
                 stageManager.switchScene(FxmlView.MENUPEREGRINO);
             } else if (idPerfil == 2) {
+                rol = Long.valueOf(2);
                 stageManager.switchScene(FxmlView.MENUADMINPARADA);
             } else if (idPerfil == 3) {
+                rol = Long.valueOf(3);
                 stageManager.switchScene(FxmlView.MENUADMINGENERAL);
             }
         } else {

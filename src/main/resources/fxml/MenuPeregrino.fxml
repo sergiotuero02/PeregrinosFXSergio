@@ -8,12 +8,7 @@
    <children>
       <Pane prefHeight="400.0" prefWidth="638.0" styleClass="pane" stylesheets="@../styles/MenuPeregrino.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Button fx:id="exportarcarnetBTN" layoutX="200.0" layoutY="116.0" mnemonicParsing="false" onAction="#abrirExportarCarnet" prefHeight="52.0" prefWidth="199.0" style="-fx-background-color: #45322e;" text="Exportar carnet" textFill="#eed4b5">
-                <font>
-                    <Font name="System Bold Italic" size="19.0" />
-                </font>
-            </Button>
-            <Button fx:id="alojarseBTN" layoutX="200.0" layoutY="221.0" mnemonicParsing="false" onAction="#abrirAlojarse" prefHeight="52.0" prefWidth="199.0" style="-fx-background-color: #45322e;" text="Alojarse" textFill="#eed4b5">
+            <Button fx:id="exportarcarnetBTN" layoutX="201.0" layoutY="174.0" mnemonicParsing="false" onAction="#abrirExportarCarnet" prefHeight="52.0" prefWidth="199.0" style="-fx-background-color: #45322e;" text="Exportar carnet" textFill="#eed4b5">
                 <font>
                     <Font name="System Bold Italic" size="19.0" />
                 </font>
