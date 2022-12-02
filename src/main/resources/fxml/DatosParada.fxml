@@ -8,17 +8,17 @@
     <children>
         <Pane prefHeight="400.0" prefWidth="600.0" styleClass="pane" stylesheets="@../styles/DatosParada.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
-                <Label fx:id="estanciasLBL" layoutX="35.0" layoutY="135.0" text="Estancias:">
+                <Label fx:id="estanciasLBL" layoutX="35.0" layoutY="135.0" text="Estancias:" textFill="45322e">
                     <font>
                         <Font name="System Bold Italic" size="24.0" />
                     </font>
                 </Label>
-                <Label fx:id="fechaInicialLBL" layoutX="394.0" layoutY="58.0" text="Fecha final:">
+                <Label fx:id="fechaInicialLBL" layoutX="394.0" layoutY="58.0" text="Fecha final:" textFill="45322e">
                     <font>
                         <Font name="System Bold Italic" size="24.0" />
                     </font>
                 </Label>
-                <Label fx:id="fechaFinalLBL" layoutX="190.0" layoutY="58.0" text="Fecha inicial:">
+                <Label fx:id="fechaFinalLBL" layoutX="190.0" layoutY="58.0" text="Fecha inicial:" textFill="45322e">
                     <font>
                         <Font name="System Bold Italic" size="24.0" />
                     </font>
