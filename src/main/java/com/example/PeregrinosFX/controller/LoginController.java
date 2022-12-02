@@ -10,6 +10,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.paint.Paint;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Controller;
@@ -125,6 +126,7 @@ public class LoginController implements Initializable {
             }
         } else {
             usuarioLBL.setText("LOGIN FAILED");
+            usuarioLBL.setTextFill(Paint.valueOf("#FF0000"));
         }
     }
     @FXML
