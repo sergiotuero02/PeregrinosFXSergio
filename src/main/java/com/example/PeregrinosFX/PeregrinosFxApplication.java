@@ -6,6 +6,7 @@ import com.example.PeregrinosFX.view.FxmlView;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -35,6 +36,7 @@ public class PeregrinosFxApplication extends Application{
     @Override
     public void start(Stage stage) throws Exception {
         stageManager = springContext.getBean(StageManager.class, stage);
+        stage.getIcons().add(new Image(getClass().getResource("/img/logoperegrinos.png").openStream()));
         stage.setResizable(false);
         displayInitialScene();
     }
