@@ -112,8 +112,8 @@ public class LoginController implements Initializable {
 
     @FXML
     private void login(ActionEvent event) throws IOException {
-        if (userService.autenticar(getUsuarioTF(), getContrasenaTF())) {
-            User u = userService.findByUser_Name(getUsuarioTF());
+        if (userService.autentico(getUsuarioTF(), getContrasenaTF())) {
+            User u = userService.findByUsuario(getUsuarioTF());
             stageManager.switchScene(FxmlView.MENUADMINPARADA);
             Long idPerfil =u.getPerfil().getIdPerfil();
             if (idPerfil == 1) {

@@ -2,51 +2,27 @@ package com.example.PeregrinosFX.bean;
 
 import jakarta.persistence.*;
 
-@Entity
-@Table(name = "User")
-public class User {
 
+
+@Entity
+@Table(name = "usuarios")
+public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "idUser", updatable = false, nullable = false)
+    @Column(name = "idUsuario", updatable = false, nullable = false)
     private long idUser;
+
+    @Column(name = "usuario")
+    private String usuario;
+
+    @Column(name = "contrasenia")
+    private String contrasenia;
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "idPerfil")
     private Perfil perfil;
 
-    @Column(name ="user_Name")
-    private String userName;
-
-    @Column(name = "password")
-    private String password;
-
-
     public User() {
 
-    }
-
-    public Perfil getPerfil() {
-        return perfil;
-    }
-
-    public void setPerfil(Perfil perfil) {
-        this.perfil = perfil;
-    }
-
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
     }
 
     public long getIdUser() {
@@ -57,14 +33,38 @@ public class User {
         this.idUser = idUser;
     }
 
+    public String getUsuario() {
+        return usuario.toString();
+    }
+
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
+    }
+
+    public String getContrasenia() {
+        return contrasenia.toString();
+    }
+
+    public void setContraseña(String contraseña) {
+        this.contrasenia = contraseña;
+    }
+
+    public Perfil getPerfil() {
+        return perfil;
+    }
+
+    public void setPerfil(Perfil perfil) {
+        this.perfil = perfil;
+    }
+
+
     @Override
     public String toString() {
         return "User{" +
-                "perfil=" + perfil +
-                ", userName='" + userName + '\'' +
-                ", password='" + password + '\'' +
-                ", id=" + idUser +
+                "idUser=" + idUser +
+                ", usuario='" + usuario + '\'' +
+                ", contraseña='" + contrasenia + '\'' +
+                ", perfil=" + perfil +
                 '}';
     }
-
 }

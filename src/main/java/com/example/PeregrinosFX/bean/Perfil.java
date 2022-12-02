@@ -1,5 +1,4 @@
 package com.example.PeregrinosFX.bean;
-
 import jakarta.persistence.*;
 
 @Entity
@@ -9,8 +8,9 @@ public class Perfil {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idPerfil", updatable = false, nullable = false)
     private Long idPerfil;
-    private String rol;
 
+    @Column (name = "rol")
+    private String rol;
     public Long getIdPerfil() {
         return idPerfil;
     }
@@ -35,4 +35,3 @@ public class Perfil {
                 '}';
     }
 }
-

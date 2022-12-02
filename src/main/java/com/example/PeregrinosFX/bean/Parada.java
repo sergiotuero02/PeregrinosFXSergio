@@ -1,22 +1,26 @@
 package com.example.PeregrinosFX.bean;
 
+
 import jakarta.persistence.*;
 
-import java.util.ArrayList;
+import java.util.List;
 
 @Entity
-@Table(name = "Parada")
+@Table(name = "paradas")
 public class Parada {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idParada", updatable = false, nullable = false)
     private long idParada;
+
     private String nombre;
+
+
     private char region;
 
     @ManyToMany(mappedBy = "paradas")
-    private ArrayList<Peregrino> peregrinos;
-
+    private List<Peregrino> peregrinos;
     public Parada() {
 
     }
@@ -45,11 +49,11 @@ public class Parada {
         this.region = region;
     }
 
-    public ArrayList<Peregrino> getPeregrinos() {
+    public List<Peregrino> getPeregrinos() {
         return peregrinos;
     }
 
-    public void setPeregrinos(ArrayList<Peregrino> peregrinos) {
+    public void setPeregrinos(List<Peregrino> peregrinos) {
         this.peregrinos = peregrinos;
     }
 
@@ -59,7 +63,6 @@ public class Parada {
                 "idParada=" + idParada +
                 ", nombre='" + nombre + '\'' +
                 ", region=" + region +
-                ", peregrinos=" + peregrinos +
                 '}';
     }
 }

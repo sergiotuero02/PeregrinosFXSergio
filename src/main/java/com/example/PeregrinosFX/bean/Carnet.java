@@ -1,27 +1,29 @@
 package com.example.PeregrinosFX.bean;
 
+
 import jakarta.persistence.*;
+
 
 import java.time.LocalDate;
 
 @Entity
-@Table(name = "Carnet")
+@Table(name = "carnets")
 public class Carnet {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idCarnet", updatable = false, nullable = false)
-
     private long idCarnet;
 
-    private LocalDate fechaExpedicion;
+    private LocalDate fechaExp;
 
-    private double distancia = 0.0;
+    private double distancia;
 
-    private int numVips = 0;
+    private int numVips;
+
 
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "idParada")
-    private Parada Paradainicial;
+    private Parada paradaInicial;
 
     public Carnet() {
 
@@ -31,16 +33,16 @@ public class Carnet {
         return idCarnet;
     }
 
-    public void setIdCarnet(long idCarnet) {
+    public void setIdCarnet(long idPeregrino) {
         this.idCarnet = idCarnet;
     }
 
-    public LocalDate getFechaExpedicion() {
-        return fechaExpedicion;
+    public LocalDate getFechaExp() {
+        return fechaExp;
     }
 
-    public void setFechaExpedicion(LocalDate fechaExpedicion) {
-        this.fechaExpedicion = fechaExpedicion;
+    public void setFechaExp(LocalDate fechaExp) {
+        this.fechaExp = fechaExp;
     }
 
     public double getDistancia() {
@@ -59,22 +61,24 @@ public class Carnet {
         this.numVips = numVips;
     }
 
-    public Parada getParadainicial() {
-        return Paradainicial;
+
+    public Parada getParadaInicial() {
+        return paradaInicial;
     }
 
-    public void setParadainicial(Parada paradainicial) {
-        Paradainicial = paradainicial;
+    public void setParadaInicial(Parada paradaInicial) {
+        this.paradaInicial = paradaInicial;
     }
 
     @Override
     public String toString() {
         return "Carnet{" +
                 "idCarnet=" + idCarnet +
-                ", fechaExpedicion=" + fechaExpedicion +
+                ", fechaExp=" + fechaExp +
                 ", distancia=" + distancia +
                 ", numVips=" + numVips +
-                ", Paradainicial=" + Paradainicial +
+
+                ", paradaInicial=" + paradaInicial +
                 '}';
     }
 }
