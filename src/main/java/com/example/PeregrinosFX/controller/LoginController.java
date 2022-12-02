@@ -2,14 +2,12 @@ package com.example.PeregrinosFX.controller;
 
 import com.example.PeregrinosFX.config.StageManager;
 import com.example.PeregrinosFX.view.FxmlView;
-import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.stage.Stage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Controller;
