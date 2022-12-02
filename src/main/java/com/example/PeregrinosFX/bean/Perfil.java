@@ -8,14 +8,14 @@ public class Perfil {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idPerfil", updatable = false, nullable = false)
-    private int idPerfil;
+    private Long idPerfil;
     private String rol;
 
-    public int getIdPerfil() {
+    public Long getIdPerfil() {
         return idPerfil;
     }
 
-    public void setIdPerfil(int idPerfil) {
+    public void setIdPerfil(Long idPerfil) {
         this.idPerfil = idPerfil;
     }
 

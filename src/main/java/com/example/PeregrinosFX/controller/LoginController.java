@@ -1,15 +1,15 @@
 package com.example.PeregrinosFX.controller;
 
+import com.example.PeregrinosFX.bean.User;
 import com.example.PeregrinosFX.config.StageManager;
+import com.example.PeregrinosFX.service.impl.UserServiceImpl;
 import com.example.PeregrinosFX.view.FxmlView;
-import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.stage.Stage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Controller;
@@ -24,6 +24,9 @@ public class LoginController implements Initializable {
     @Lazy
     @Autowired
     private StageManager stageManager;
+
+    @Autowired
+    private UserServiceImpl userService;
 
     @FXML
     private Label usuarioLBL;
@@ -43,6 +46,87 @@ public class LoginController implements Initializable {
     @FXML
     private Button cancelarBTN;
 
+    public StageManager getStageManager() {
+        return stageManager;
+    }
+
+    public void setStageManager(StageManager stageManager) {
+        this.stageManager = stageManager;
+    }
+
+    public UserServiceImpl getUserService() {
+        return userService;
+    }
+
+    public void setUserService(UserServiceImpl userService) {
+        this.userService = userService;
+    }
+
+    public Label getUsuarioLBL() {
+        return usuarioLBL;
+    }
+
+    public void setUsuarioLBL(Label usuarioLBL) {
+        this.usuarioLBL = usuarioLBL;
+    }
+
+    public Label getContrasenaLBL() {
+        return contrasenaLBL;
+    }
+
+    public void setContrasenaLBL(Label contrasenaLBL) {
+        this.contrasenaLBL = contrasenaLBL;
+    }
+
+    public String getUsuarioTF() {
+        return usuarioTF.getText();
+    }
+
+    public void setUsuarioTF(TextField usuarioTF) {
+        this.usuarioTF = usuarioTF;
+    }
+
+    public String getContrasenaTF() {
+        return contrasenaTF.getText();
+    }
+
+    public void setContrasenaTF(TextField contrasenaTF) {
+        this.contrasenaTF = contrasenaTF;
+    }
+
+    public Button getAceptarBTN() {
+        return aceptarBTN;
+    }
+
+    public void setAceptarBTN(Button aceptarBTN) {
+        this.aceptarBTN = aceptarBTN;
+    }
+
+    public Button getCancelarBTN() {
+        return cancelarBTN;
+    }
+
+    public void setCancelarBTN(Button cancelarBTN) {
+        this.cancelarBTN = cancelarBTN;
+    }
+
+    @FXML
+    private void login(ActionEvent event) throws IOException {
+        if (userService.autenticar(getUsuarioTF(), getContrasenaTF())) {
+            User u = userService.findByUser_Name(getUsuarioTF());
+            stageManager.switchScene(FxmlView.MENUADMINPARADA);
+            Long idPerfil =u.getPerfil().getIdPerfil();
+            if (idPerfil == 1) {
+                stageManager.switchScene(FxmlView.MENUPEREGRINO);
+            } else if (idPerfil == 2) {
+                stageManager.switchScene(FxmlView.MENUADMINPARADA);
+            } else if (idPerfil == 3) {
+                stageManager.switchScene(FxmlView.MENUADMINGENERAL);
+            }
+        } else {
+            usuarioLBL.setText("LOGIN FAILED");
+        }
+    }
     @FXML
     private void volverAlMenu(ActionEvent event) throws IOException {
         stageManager.switchScene(FxmlView.MENUPRINCIPAL);

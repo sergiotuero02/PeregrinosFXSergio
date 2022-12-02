@@ -20,7 +20,7 @@
             </Label>
             <TextField fx:id="usuarioTF" editable="false" layoutX="99.0" layoutY="228.0" prefHeight="60.0" prefWidth="821.0" style="-fx-background-color: transparent;" />
             <TextField fx:id="contrasenaTF" layoutX="99.0" layoutY="437.0" prefHeight="60.0" prefWidth="821.0" style="-fx-background-color: trasnparent;" />
-            <Button fx:id="aceptarBTN" layoutX="60.0" layoutY="325.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="136.0" style="-fx-background-color: #009000;" text="Aceptar" textFill="#fafafa">
+            <Button fx:id="aceptarBTN" onAction="#login" layoutX="60.0" layoutY="325.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="136.0" style="-fx-background-color: #009000;" text="Aceptar" textFill="#fafafa">
                <font>
                   <Font name="System Bold Italic" size="14.0" />
                </font></Button>

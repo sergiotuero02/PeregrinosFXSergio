@@ -13,7 +13,11 @@ public class User {
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "idPerfil")
     private Perfil perfil;
+
+    @Column(name ="user_Name")
     private String userName;
+
+    @Column(name = "password")
     private String password;
 
 
@@ -62,4 +66,5 @@ public class User {
                 ", id=" + idUser +
                 '}';
     }
+
 }
