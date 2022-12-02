@@ -36,7 +36,7 @@ public class PeregrinosFxApplication extends Application{
     @Override
     public void start(Stage stage) throws Exception {
         stageManager = springContext.getBean(StageManager.class, stage);
-        stage.getIcons().add(new Image(getClass().getResource("/img/logoperegrinos.png").openStream()));
+        stage.getIcons().add(new Image(getClass().getResource("/img/logoConcha.png").openStream()));
         stage.setResizable(false);
         displayInitialScene();
     }
