@@ -8,12 +8,12 @@
    <children>
       <Pane layoutX="359.0" layoutY="150.0" prefHeight="769.0" prefWidth="1019.0" styleClass="pane" stylesheets="@../styles/InicioSesion.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Label fx:id="usuarioLBL" layoutX="48.0" layoutY="40.0" prefHeight="54.0" prefWidth="219.0" text="Usuario:" textFill="#45322e">
+            <Label fx:id="usuarioLBL" layoutX="55.0" layoutY="55.0" prefHeight="54.0" prefWidth="219.0" text="Usuario:" textFill="#45322e">
                <font>
                   <Font name="System Bold Italic" size="25.0" />
                </font>
             </Label>
-            <Label fx:id="contrsenaLBL" layoutX="48.0" layoutY="139.0" prefHeight="84.0" prefWidth="411.0" text="Contraseña: " textFill="#45322e">
+            <Label fx:id="contrsenaLBL" layoutX="55.0" layoutY="148.0" prefHeight="84.0" prefWidth="411.0" text="Contraseña: " textFill="#45322e">
                <font>
                   <Font name="System Bold Italic" size="25.0" />
                </font>
