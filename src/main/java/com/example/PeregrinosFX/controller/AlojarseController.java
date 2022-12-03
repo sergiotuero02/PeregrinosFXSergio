@@ -181,7 +181,7 @@ public class AlojarseController implements Initializable {
     @FXML
     private void cancelarAction(ActionEvent event) throws IOException {
         if(rol == 2) {
-            stageManager.switchScene(FxmlView.MENUPEREGRINO);
+            stageManager.switchScene(FxmlView.MENUADMINPARADA);
         }
         if(rol == 3) {
             stageManager.switchScene(FxmlView.MENUADMINGENERAL);
