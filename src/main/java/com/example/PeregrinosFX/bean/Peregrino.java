@@ -11,7 +11,7 @@ import java.util.List;
 public class Peregrino {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "idPeregrino", updatable = false, nullable = false)
+    @Column(updatable = false, nullable = false)
 
     private long idPeregrino;
 
@@ -22,8 +22,8 @@ public class Peregrino {
     private String nacionalidad;
 
 
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "idCarnet")
+    @OneToOne
+    @JoinColumn
     private Carnet carnet;
 
 
@@ -88,11 +88,6 @@ public class Peregrino {
 
     @Override
     public String toString() {
-        return "Peregrino{" +
-                "idPeregrino=" + idPeregrino +
-                ", nombre='" + nombre + '\'' +
-                ", nacionalidad='" + nacionalidad + '\'' +
-                ", carnet=" + carnet +
-                '}';
+        return nombre;
     }
 }

@@ -17,12 +17,28 @@ public class User {
 
     @Column(name = "contrasenia")
     private String contrasenia;
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "idPerfil")
+    @OneToOne
+    @JoinColumn
     private Perfil perfil;
+
+    @OneToOne
+    @JoinColumn
+    private Parada parada;
+
+    @OneToOne
+    @JoinColumn
+    private Peregrino peregrino;
 
     public User() {
 
+    }
+
+    public Peregrino getPeregrino() {
+        return peregrino;
+    }
+
+    public void setPeregrino(Peregrino peregrino) {
+        this.peregrino = peregrino;
     }
 
     public long getIdUser() {
@@ -43,6 +59,14 @@ public class User {
 
     public String getContrasenia() {
         return contrasenia.toString();
+    }
+
+    public Parada getParada() {
+        return parada;
+    }
+
+    public void setParada(Parada parada) {
+        this.parada = parada;
     }
 
     public void setContrasenia(String contrasenia) {

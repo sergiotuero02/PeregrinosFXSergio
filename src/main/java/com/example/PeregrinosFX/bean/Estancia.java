@@ -10,20 +10,20 @@ import java.time.LocalDate;
 public class Estancia {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "idEstancia", updatable = false, nullable = false)
+    @Column(updatable = false, nullable = false)
     private long idEstancia;
 
     private LocalDate fecha;
 
     private boolean vip = false;
 
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "idParada")
+    @OneToOne
+    @JoinColumn
     private Parada parada;
 
 
     @ManyToOne()
-    @JoinColumn(name = "idPeregrino")
+    @JoinColumn
     private Peregrino peregrino;
 
 

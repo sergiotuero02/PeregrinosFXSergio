@@ -11,7 +11,7 @@ public class Parada {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "idParada", updatable = false, nullable = false)
+    @Column(updatable = false, nullable = false)
     private long idParada;
 
     private String nombre;

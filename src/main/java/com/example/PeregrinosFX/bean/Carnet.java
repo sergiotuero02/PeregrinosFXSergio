@@ -21,8 +21,8 @@ public class Carnet {
     private int numVips;
 
 
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "idParada")
+    @OneToOne
+    @JoinColumn
     private Parada paradaInicial;
 
     public Carnet() {

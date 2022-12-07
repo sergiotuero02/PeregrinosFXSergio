@@ -48,6 +48,7 @@ public class LoginController implements Initializable {
     private Button cancelarBTN;
 
     public static Long rol;
+    public static User u;
     public StageManager getStageManager() {
         return stageManager;
     }
@@ -115,7 +116,7 @@ public class LoginController implements Initializable {
     @FXML
     private void login(ActionEvent event) throws IOException {
         if (userService.autentico(getUsuarioTF(), getContrasenaTF())) {
-            User u = userService.findByUsuario(getUsuarioTF());
+            u = userService.findByUsuario(getUsuarioTF());
             stageManager.switchScene(FxmlView.MENUADMINPARADA);
             Long idPerfil =u.getPerfil().getIdPerfil();
             if (idPerfil == 1) {

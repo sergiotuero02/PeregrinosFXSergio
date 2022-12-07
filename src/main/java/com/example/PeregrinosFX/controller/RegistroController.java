@@ -216,7 +216,7 @@ public class RegistroController implements Initializable {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Usuario registrado");
         alert.setHeaderText(null);
-        alert.setContentText("El usuario "+getUsuarioTF()+" se ha registrado correctamente.");
+        alert.setContentText("El usuario " + getUsuarioTF() + " se ha registrado correctamente.");
         alert.showAndWait();
     }
 
