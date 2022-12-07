@@ -9,4 +9,8 @@ public interface UserService extends GenericService <User> {
     boolean autentico(String usuario, String contrasenia);
 
     User findByUsuario(String usuario);
+
+    boolean userDisponible (String usuario);
+
+    public abstract User addUser(User user);
 }

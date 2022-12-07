@@ -46,13 +46,7 @@ public class AlojarseController implements Initializable {
     private ComboBox peregrinoCB;
 
     @FXML
-    private ToggleGroup vip;
-
-    @FXML
-    private RadioButton siRB;
-
-    @FXML
-    private RadioButton noRB;
+    private CheckBox vipCB;
 
     @FXML
     private Button alojarseBTN;
@@ -124,30 +118,6 @@ public class AlojarseController implements Initializable {
         this.peregrinoCB = peregrinoCB;
     }
 
-    public ToggleGroup getVip() {
-        return vip;
-    }
-
-    public void setVip(ToggleGroup vip) {
-        this.vip = vip;
-    }
-
-    public RadioButton getSiRB() {
-        return siRB;
-    }
-
-    public void setSiRB(RadioButton siRB) {
-        this.siRB = siRB;
-    }
-
-    public RadioButton getNoRB() {
-        return noRB;
-    }
-
-    public void setNoRB(RadioButton noRB) {
-        this.noRB = noRB;
-    }
-
     public Button getAlojarseBTN() {
         return alojarseBTN;
     }
@@ -168,13 +138,13 @@ public class AlojarseController implements Initializable {
     private void estanciaClick(ActionEvent event) throws IOException{
         if(estanciaCheck.isSelected()){
             vipLBL.setTextFill(Paint.valueOf("45322e"));
-            siRB.setTextFill(Paint.valueOf("45322e"));
-            noRB.setTextFill(Paint.valueOf("45322e"));
+            vipCB.setDisable(false);
+
         }
         else{
             vipLBL.setTextFill(Paint.valueOf("45322e70"));
-            siRB.setTextFill(Paint.valueOf("45322e70"));
-            noRB.setTextFill(Paint.valueOf("45322e70"));
+            vipCB.setDisable(true);
+
         }
 
     }

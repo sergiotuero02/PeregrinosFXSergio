@@ -45,8 +45,8 @@ public class User {
         return contrasenia.toString();
     }
 
-    public void setContraseña(String contraseña) {
-        this.contrasenia = contraseña;
+    public void setContrasenia(String contrasenia) {
+        this.contrasenia = contrasenia;
     }
 
     public Perfil getPerfil() {

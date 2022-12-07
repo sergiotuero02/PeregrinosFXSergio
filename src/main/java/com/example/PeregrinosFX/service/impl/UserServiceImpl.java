@@ -35,6 +35,19 @@ public class UserServiceImpl implements UserService {
         return userRespository.findByUsuario(username);
     }
 
+    @Override
+    public boolean userDisponible(String usuario) {
+        User u = findByUsuario(usuario);
+        if (u == null) {
+            return false;
+        } else return true;
+    }
+
+    @Override
+    public User addUser(User user) {
+        return userRespository.save(user);
+    }
+
 
     @Override
     public User save(User entity) {
