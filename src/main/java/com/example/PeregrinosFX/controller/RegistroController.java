@@ -248,13 +248,12 @@ public class RegistroController implements Initializable {
             carnet.setParadaInicial(parada);
             Carnet newCarnet = carnetService.addCarnet(carnet);
             newCarnet.getIdCarnet();
-            peregrino.setIdPeregrino(3L);
             peregrino.setNombre(getNombreTF());
             peregrino.setNacionalidad((String) nacionalidadCB.getValue());
             peregrino.setCarnet(newCarnet);
             userCreado.setPeregrino(peregrino);
-            User newUser = userService.addUser(userCreado);
             Peregrino newPeregrino = peregrinoService.addPeregrino(peregrino);
+            User newUser = userService.addUser(userCreado);
             updateAlert(userCreado);
             stageManager.switchScene(FxmlView.USUARIOCREADO);
 
