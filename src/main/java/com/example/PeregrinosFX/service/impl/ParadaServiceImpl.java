@@ -13,6 +13,7 @@ import java.util.Optional;
 public class ParadaServiceImpl implements ParadaService {
     @Autowired
     private ParadaRepository paradaRepository;
+
     @Override
     public Parada save(Parada entity) {
         return null;
@@ -57,6 +58,5 @@ public class ParadaServiceImpl implements ParadaService {
     public Parada addParada(Parada parada) {
         return null;
     }
-
 
 }
