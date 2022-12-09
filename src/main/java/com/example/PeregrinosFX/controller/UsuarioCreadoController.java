@@ -16,6 +16,9 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import static com.example.PeregrinosFX.controller.LoginController.u;
+import static com.example.PeregrinosFX.controller.RegistroController.userCreado;
+
 @Controller
 public class UsuarioCreadoController implements Initializable {
 
@@ -24,7 +27,7 @@ public class UsuarioCreadoController implements Initializable {
     private StageManager stageManager;
 
     @FXML
-    private PasswordField passField;
+    private TextField passTF;
 
     @FXML
     private TextField usuarioTXT;
@@ -44,16 +47,48 @@ public class UsuarioCreadoController implements Initializable {
 
     }
 
+    @FXML
+    private void mostrarAction(ActionEvent event) throws IOException {
+        passTF.setText(userCreado.getContrasenia());
+
+    }
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        paradaTXT.setText(userCreado.getPeregrino().getCarnet().getParadaInicial().getNombre());
+        usuarioTXT.setText(userCreado.getUsuario());
+        nacionalidadTXT.setText(userCreado.getPeregrino().getNacionalidad());
+        String contrasenaOcult = "";
+        for(int i = 0; i<userCreado.getContrasenia().length(); i++){
+            contrasenaOcult = contrasenaOcult+ "*";
+        }
+        passTF.setText(contrasenaOcult);
     }
 
-    public PasswordField getPassField() {
-        return passField;
+
+
+    public StageManager getStageManager() {
+        return stageManager;
     }
 
-    public void setPassField(PasswordField passField) {
-        this.passField = passField;
+    public void setStageManager(StageManager stageManager) {
+        this.stageManager = stageManager;
+    }
+
+    public TextField getPassTF() {
+        return passTF;
+    }
+
+    public void setPassTF(TextField passTF) {
+        this.passTF = passTF;
+    }
+
+    public Button getInicioBTN() {
+        return inicioBTN;
+    }
+
+    public void setInicioBTN(Button inicioBTN) {
+        this.inicioBTN = inicioBTN;
     }
 
     public TextField getUsuarioTXT() {

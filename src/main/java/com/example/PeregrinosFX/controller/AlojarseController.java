@@ -1,6 +1,10 @@
 package com.example.PeregrinosFX.controller;
 
+import com.example.PeregrinosFX.bean.Parada;
+import com.example.PeregrinosFX.bean.Peregrino;
 import com.example.PeregrinosFX.config.StageManager;
+import com.example.PeregrinosFX.service.ParadaService;
+import com.example.PeregrinosFX.service.PeregrinoService;
 import com.example.PeregrinosFX.view.FxmlView;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -13,9 +17,11 @@ import org.springframework.stereotype.Controller;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import static com.example.PeregrinosFX.controller.LoginController.rol;
+import static com.example.PeregrinosFX.controller.LoginController.u;
 
 @Controller
 public class AlojarseController implements Initializable {
@@ -23,6 +29,14 @@ public class AlojarseController implements Initializable {
     @Lazy
     @Autowired
     private StageManager stageManager;
+
+    @Lazy
+    @Autowired
+    private ParadaService paradaService;
+
+    @Lazy
+    @Autowired
+    private PeregrinoService peregrinoService;
 
     @FXML
     private Label paradaLBL;
@@ -160,6 +174,21 @@ public class AlojarseController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        if (rol == 2) {
+            paradaCB.setValue(u.getParada().toString());
+        } else {
+            ArrayList<Parada> paradas = new ArrayList<>();
+            paradas = (ArrayList<Parada>) paradaService.findAll();
+            for (Parada p : paradas) {
+                paradaCB.getItems().add(p);
+            }
+            ArrayList<Peregrino> peregrinos = new ArrayList<>();
+            peregrinos = (ArrayList<Peregrino>) peregrinoService.findAll();
+            for (Peregrino p1 : peregrinos) {
+                peregrinoCB.getItems().add(p1);
 
+
+            }
+        }
     }
 }

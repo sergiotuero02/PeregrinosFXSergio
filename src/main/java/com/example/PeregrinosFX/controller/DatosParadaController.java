@@ -25,6 +25,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Optional;
 import java.util.ResourceBundle;
 import java.util.Scanner;
 
@@ -89,7 +90,8 @@ public class DatosParadaController implements Initializable {
     @FXML
     private void datosParada(ActionEvent event) throws IOException {
         try {
-            Parada paradaBD = paradaService.find(Long.parseLong(String.valueOf(paradaCB.getValue())));
+            Object o = paradaCB.getSelectionModel().getSelectedItem();
+            Parada paradaBD = paradaService.findByIdParada(1L);
             LocalDate fechaInicial, fechaFinal;
             fechaInicial = fechainicialDATE.getValue();
             fechaFinal = fechafinalDATE.getValue();
@@ -101,7 +103,6 @@ public class DatosParadaController implements Initializable {
             peregrinoColmn.setCellValueFactory(new PropertyValueFactory<>("peregrino"));
 
             paradaCB.setEditable(false);
-            paradaCB.setValue(u.getParada().getIdParada());
             if (fechaInicial.isEqual(fechaFinal)) {
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("Fechas incorrectas");
@@ -186,17 +187,14 @@ public class DatosParadaController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        if(rol == 2){
-            paradaCB.setValue(u.getParada().getIdParada());
-        }
-
-        else {
-            paradaCB.getItems().addAll(
-                    "1",
-                    "2",
-                    "3"
-
-            );
+        if (rol == 2) {
+            paradaCB.setValue(u.getParada().toString());
+        } else {
+            ArrayList<Parada> paradas = new ArrayList<>();
+            paradas = (ArrayList<Parada>) paradaService.findAll();
+            for (Parada p : paradas) {
+                paradaCB.getItems().add(p);
+            }
         }
     }
 }

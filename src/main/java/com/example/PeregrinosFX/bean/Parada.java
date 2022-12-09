@@ -12,7 +12,7 @@ public class Parada {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(updatable = false, nullable = false)
-    private long idParada;
+    private Long idParada;
 
     private String nombre;
 
@@ -25,7 +25,7 @@ public class Parada {
 
     }
 
-    public long getIdParada() {
+    public Long getIdParada() {
         return idParada;
     }
 
@@ -59,10 +59,6 @@ public class Parada {
 
     @Override
     public String toString() {
-        return "Parada{" +
-                "idParada=" + idParada +
-                ", nombre='" + nombre + '\'' +
-                ", region=" + region +
-                '}';
+        return nombre;
     }
 }

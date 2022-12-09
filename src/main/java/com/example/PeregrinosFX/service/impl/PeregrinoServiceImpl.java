@@ -47,7 +47,7 @@ public class PeregrinoServiceImpl implements PeregrinoService {
 
     @Override
     public List<Peregrino> findAll() {
-        return null;
+        return peregrinoRespository.findAll();
     }
 
     @Override

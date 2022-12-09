@@ -82,6 +82,8 @@ public class RegistroController implements Initializable {
     @FXML
     private Button cancelarBTN;
 
+    public static User userCreado;
+
     public StageManager getStageManager() {
         return stageManager;
     }
@@ -228,7 +230,7 @@ public class RegistroController implements Initializable {
             usuarioLBL.setText("NO DISPONIBLE");
             usuarioLBL.setTextFill(Paint.valueOf("#FF0000"));
         } else {
-            User user = new User();
+            userCreado = new User();
             Peregrino peregrino = new Peregrino();
             Carnet carnet = new Carnet();
             Parada parada = new Parada();
@@ -237,10 +239,9 @@ public class RegistroController implements Initializable {
             parada.setIdParada(Long.valueOf((String) paradaCB.getValue()));
             carnetAux.getIdCarnet();
             perfil.setIdPerfil(1L);
-            user.setContrasenia(getContrasenaTF());
-            user.setUsuario(getUsuarioTF());
-            user.setPerfil(perfil);
-            User newUser = userService.addUser(user);
+            userCreado.setContrasenia(getContrasenaTF());
+            userCreado.setUsuario(getUsuarioTF());
+            userCreado.setPerfil(perfil);
             carnet.setDistancia(0.0);
             carnet.setFechaExp(LocalDate.now());
             carnet.setNumVips(0);
@@ -251,9 +252,12 @@ public class RegistroController implements Initializable {
             peregrino.setNombre(getNombreTF());
             peregrino.setNacionalidad((String) nacionalidadCB.getValue());
             peregrino.setCarnet(newCarnet);
+            userCreado.setPeregrino(peregrino);
+            User newUser = userService.addUser(userCreado);
             Peregrino newPeregrino = peregrinoService.addPeregrino(peregrino);
-            updateAlert(user);
-            stageManager.switchScene(FxmlView.MENUPRINCIPAL);
+            updateAlert(userCreado);
+            stageManager.switchScene(FxmlView.USUARIOCREADO);
+
         }
 
     }
