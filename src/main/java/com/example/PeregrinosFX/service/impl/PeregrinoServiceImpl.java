@@ -54,4 +54,5 @@ public class PeregrinoServiceImpl implements PeregrinoService {
     public Peregrino addPeregrino(Peregrino peregrino) {
         return peregrinoRespository.save(peregrino);
     }
+
 }

@@ -43,7 +43,7 @@ public class UsuarioCreadoController implements Initializable {
 
     @FXML
     private void inicioAction(ActionEvent event) throws IOException {
-        stageManager.switchScene(FxmlView.MENUPEREGRINO);
+        stageManager.switchScene(FxmlView.MENUPRINCIPAL);
 
     }
 

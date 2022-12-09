@@ -3,6 +3,7 @@ package com.example.PeregrinosFX.controller;
 import com.example.PeregrinosFX.bean.*;
 import com.example.PeregrinosFX.config.StageManager;
 import com.example.PeregrinosFX.service.CarnetService;
+import com.example.PeregrinosFX.service.ParadaService;
 import com.example.PeregrinosFX.service.PeregrinoService;
 import com.example.PeregrinosFX.service.UserService;
 import com.example.PeregrinosFX.view.FxmlView;
@@ -10,6 +11,7 @@ import com.example.PeregrinosFX.view.FxmlView;
 import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import javafx.event.ActionEvent;
@@ -31,6 +33,10 @@ public class RegistroController implements Initializable {
     @Lazy
     @Autowired
     private UserService userService;
+
+    @Lazy
+    @Autowired
+    private ParadaService paradaService;
 
     @Lazy
     @Autowired
@@ -213,7 +219,7 @@ public class RegistroController implements Initializable {
     }
 
     @FXML
-    private void updateAlert(User user){
+    private void updateAlert(User user) {
 
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Usuario registrado");
@@ -223,20 +229,31 @@ public class RegistroController implements Initializable {
     }
 
 
-
     @FXML
     private void registro(ActionEvent event) throws IOException {
         if (userService.userDisponible(getUsuarioTF())) {
             usuarioLBL.setText("NO DISPONIBLE");
             usuarioLBL.setTextFill(Paint.valueOf("#FF0000"));
-        } else {
+        } else if (confirmcontraTF.equals("") || contrasenaTF.equals("") || usuarioTF.equals("") || nombreTF.equals("") || paradaCB.getSelectionModel().getSelectedItem() == null || nacionalidadCB.getSelectionModel().getSelectedItem() == null) {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Campos no introducidos");
+            alert.setHeaderText(null);
+            alert.setContentText("Introduzca todos los campos.");
+            alert.showAndWait();
+        }
+        else if (confirmcontraTF != contrasenaTF) {
+            contrasenaLBL.setText("NO COINCIDEN");
+            contrasenaLBL.setTextFill(Paint.valueOf("#FF0000"));
+            confirmcontraLBL.setText("NO COINCIDEN");
+            confirmcontraLBL.setTextFill(Paint.valueOf("#FF0000"));
+        }  else {
             userCreado = new User();
             Peregrino peregrino = new Peregrino();
             Carnet carnet = new Carnet();
             Parada parada = new Parada();
             Perfil perfil = new Perfil();
             Carnet carnetAux = new Carnet();
-            parada.setIdParada(Long.valueOf((String) paradaCB.getValue()));
+            parada = (Parada) paradaCB.getSelectionModel().getSelectedItem();
             carnetAux.getIdCarnet();
             perfil.setIdPerfil(1L);
             userCreado.setContrasenia(getContrasenaTF());
@@ -277,11 +294,10 @@ public class RegistroController implements Initializable {
                 "Francia"
 
         );
-        paradaCB.getItems().addAll(
-                "1",
-                "2",
-                "3"
-
-        );
+        ArrayList<Parada> paradas = new ArrayList<>();
+        paradas = (ArrayList<Parada>) paradaService.findAll();
+        for (Parada p : paradas) {
+            paradaCB.getItems().add(p);
+        }
     }
 }
