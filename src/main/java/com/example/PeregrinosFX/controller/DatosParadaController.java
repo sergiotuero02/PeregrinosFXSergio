@@ -89,7 +89,88 @@ public class DatosParadaController implements Initializable {
 
     @FXML
     private void datosParada(ActionEvent event) throws IOException {
+        try {
 
+            LocalDate fechaInicial, fechaFinal;
+            fechaInicial = fechainicialDATE.getValue();
+            fechaFinal = fechafinalDATE.getValue();
+            Parada paradaux = null;
+
+            idColmn.setCellValueFactory(new PropertyValueFactory<>("idEstancia"));
+            fechaColmn.setCellValueFactory(new PropertyValueFactory<>("fecha"));
+            vipColmn.setCellValueFactory(new PropertyValueFactory<>("vip"));
+            peregrinoColmn.setCellValueFactory(new PropertyValueFactory<>("peregrino"));
+
+            paradaCB.setValue(paradaCB.getSelectionModel().getSelectedItem());
+            if (fechaInicial.isEqual(fechaFinal)) {
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Fechas incorrectas");
+                alert.setHeaderText(null);
+                alert.setContentText("Las fechas son iguales.");
+                alert.showAndWait();
+            }
+
+            if (fechaInicial.isAfter(fechaFinal)) {
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Fechas incorrectas");
+                alert.setHeaderText(null);
+                alert.setContentText("La fecha final es antes que la inicial.");
+                alert.showAndWait();
+
+            }
+
+            if (fechaInicial.isBefore(fechaFinal)) {
+                ArrayList<Estancia> estanciasBD = (ArrayList<Estancia>) estanciaService.findByParada((Parada) paradaCB.getSelectionModel().getSelectedItem());
+                for (Estancia e : estanciasBD) {
+                    if (e.getFecha().equals(fechaFinal) || e.getFecha().equals(fechaFinal) || e.getFecha().isAfter(fechaInicial) && e.getFecha().isBefore(fechaFinal)) {
+                        estanciasTABLE.getItems().add(e);
+                    }
+
+                }
+
+            }
+
+            if (fechaInicial.isEqual(fechaFinal)) {
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Fechas incorrectas");
+                alert.setHeaderText(null);
+                alert.setContentText("Las fechas son iguales.");
+                alert.showAndWait();
+            }
+
+            if (fechaInicial.isAfter(fechaFinal)) {
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Fechas incorrectas");
+                alert.setHeaderText(null);
+                alert.setContentText("La fecha final es antes que la inicial.");
+                alert.showAndWait();
+
+            }
+
+            if (fechaInicial.isBefore(fechaFinal)) {
+                ArrayList<Estancia> estanciasBD = (ArrayList<Estancia>) estanciaService.findAll();
+                for (Estancia e : estanciasBD) {
+                    if (e.getFecha().equals(fechaFinal) || e.getFecha().equals(fechaFinal) || e.getFecha().isAfter(fechaInicial) && e.getFecha().isBefore(fechaFinal) && e.getParada() == u.getParada()) {
+                        estanciasTABLE.getItems().add(e);
+                    }
+
+                }
+
+            }
+
+        } catch (NullPointerException e) {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Fechas no introducidas");
+            alert.setHeaderText(null);
+            alert.setContentText("Introduzca las fechas");
+            alert.showAndWait();
+        } catch (NumberFormatException e) {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Parada no introducida");
+            alert.setHeaderText(null);
+            alert.setContentText("Introduzca la parada");
+            alert.showAndWait();
+        }
 
     }
 
@@ -106,7 +187,7 @@ public class DatosParadaController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         if (rol == 2) {
-            paradaCB.setValue(u.getParada().toString());
+            paradaCB.setValue(u.getParada());
         } else {
             ArrayList<Parada> paradas = new ArrayList<>();
             paradas = (ArrayList<Parada>) paradaService.findAll();
